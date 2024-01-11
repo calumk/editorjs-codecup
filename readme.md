@@ -1,18 +1,19 @@
-# EditorJs - Codeflask
+# EditorJs - CodeCup
 
 ### NPM
-    npm i @calumk/editorjs-codeflask
+    npm i @calumk/editorjs-codecup
 
 ### JS
-    https://cdn.jsdelivr.net/npm/@calumk/editorjs-codeflask@latest
+    https://cdn.jsdelivr.net/npm/@calumk/editorjs-codecup@latest
 
 ---
 
 ## About
 
-This is an EditorJs wrapper for [CodeFlask](https://kazzkiq.github.io/CodeFlask/) - A lovely lightweight zero-dep code formatter
+This is an EditorJs wrapper for [CodeCup](https://github.com/calumk/codecup) - A lovely lightweight zero-dep code formatter
 
 It was built to be an improvement on :
+
 * https://github.com/editor-js/code - Too Basic
 * https://github.com/dev-juju/codebox - Agressive styling, and exports more data than markdown can handle
 
@@ -24,10 +25,8 @@ It was built to be an improvement on :
 
 ## Built with:
 
-* [CodeFlask](https://kazzkiq.github.io/CodeFlask/)
+* [CodeCup](https://github.com/calumk/codecup)
 * [Prism](https://www.npmjs.com/package/prismjs)
-* [Prism ESM Importer](https://www.npmjs.com/package/prismjs-components-importer)
-* [Nice Select 2](https://www.npmjs.com/package/nice-select2)
 
 
 ---
@@ -36,13 +35,13 @@ It was built to be an improvement on :
 
 ```javascript
 import EditorJS from '@editorjs/editorjs';
-import editorjsCodeflask from '@calumk/editorjs-codeflask';
+import editorjsCodecup from '@calumk/editorjs-codecup';
 
 var editor = EditorJS({
   // ...
   tools: {
     ...
-    code : editorjsCodeflask
+    code : editorjsCodecup
   },
 });
 ```
@@ -55,7 +54,7 @@ The data imported/exported from the block is as follows:
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | code                       | The code that is displayed in the editor, with line breaks                                                               |
 | language (optional)        | The programming language                                                                                                 |
-| showlinenumbers (optional) | Will show/hide the line numbers (Default true) (WIP - [Codeflask #132](https://github.com/kazzkiq/CodeFlask/issues/132)) |
+| showlinenumbers (optional) | Will show/hide the line numbers (Default true) 
 
 
 Since language and linenumbers are optional, existing ```code``` blocks can safley use this plugin
