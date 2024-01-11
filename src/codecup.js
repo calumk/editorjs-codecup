@@ -34,8 +34,8 @@
 
   import codecup from '@calumk/codecup/dist/codecup.bundle.js';
 
-  import NiceSelect from "nice-select2/dist/js/nice-select2";
-  import NiceSelectStyle from "nice-select2/dist/css/nice-select2.css";
+  // import NiceSelect from "nice-select2/dist/js/nice-select2";
+  // import NiceSelectStyle from "nice-select2/dist/css/nice-select2.css";
 
 
 
