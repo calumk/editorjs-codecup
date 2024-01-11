@@ -5,7 +5,7 @@
   "author": "Calum Knott",
   "repository": "https://github.com/calumk/editorjs-codecup",
   "license": "MIT",
-  "main": "./dist/editorjs-codecup.bundle.js",
+  "main": "./dist/editorjs-codeCup.bundle.js",
   "scripts": {
     "build": "webpack --mode production"
   },
