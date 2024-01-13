@@ -3,14 +3,14 @@ let example_data = {
 		{
 			type: "header",
 			data: {
-				text: "Example : @calumk/editorjs-codeflask ",
+				text: "Example : @calumk/editorjs-codecup ",
 				level: 3,
 			},
 		},
 		{
 			type: "paragraph",
 			data: {
-				text: "This is an example of using EditorJs, with the @calumk/editorjs-codeflask package",
+				text: "This is an example of using EditorJs, with the @calumk/editorjs-codecup package",
 			},
 		},
 		{
@@ -19,7 +19,7 @@ let example_data = {
 		{
 			type: "code",
 			data: {
-				code: "// example\n// This is an example of codeflask!\n '// Hello World \nlet num_a = 45; \nlet num_b = 33; \n\nlet adder = (_num_a,_num_b) => {\n\treturn _num_a + _num_b; \n}\n\nlet ans = adder(num_a,num_b)'",
+				code: "// example\n// This is an example of codecup!\n '// Hello World \nlet num_a = 45; \nlet num_b = 33; \n\nlet adder = (_num_a,_num_b) => {\n\treturn _num_a + _num_b; \n}\n\nlet ans = adder(num_a,num_b)'",
 				language: "javascript",
 				showlinenumbers: true,
 			},
@@ -27,7 +27,7 @@ let example_data = {
 		{
 			type: "code",
 			data: {
-				code: "// example\n// This is an example of codeflask! \n <script>TEST</script>",
+				code: "// example\n// This is an example of codecup! \n <script>TEST</script> \n <div> Hello World </div>",
 				language: "javascript",
 				showlinenumbers: true,
 			},
@@ -43,7 +43,7 @@ let example_data = {
 		{
 			type: "code",
 			data: {
-				code: "// minimal example \n// This is an example of codeflask with only the code setting\n",
+				code: "// minimal example \n// This is an example of codecup with only the code setting\n",
 			},
 		},
 	],
