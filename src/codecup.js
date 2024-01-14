@@ -159,8 +159,8 @@
     
 
     this.data.editorInstance.onUpdate((code) => {
-      console.log("onUpdate fired")
-      console.log(code)
+      // console.log("onUpdate fired")
+      // console.log(code)
       let _length = code.split('\n').length
       this._debounce(this._updateEditorHeight(_length))
     });
@@ -169,9 +169,9 @@
     this.data.editorInstance.addLanguage(this.data.language, Prism.languages[this.data.language]);
     this.data.editorInstance.updateCode(this.data.code);
 
-    console.log(this.data.code)
-    console.log(this.data.editorInstance.getCode())
-    console.log(this._element)
+    // console.log(this.data.code)
+    // console.log(this.data.editorInstance.getCode())
+    // console.log(this._element)
 
     return this._element
    }
@@ -239,7 +239,7 @@
     }
 
     toggleButton.addEventListener('click', (e) => {
-      console.log(e)
+      // console.log(e)
       e.target.classList.toggle(this._CSS.settingsButtonActive)
       this._toggleLineNumbers()
     });
@@ -275,7 +275,7 @@
 
     this.data.editorInstance.toggleLineNumbers()
 
-    console.log(this.data.editorInstance)
+    // console.log(this.data.editorInstance)
     // replace this with a native method for codeCup, if it gets implemented.
     // for now, we will completely destroy the codeCup instance, and rebuild it - lazy but effective
 
