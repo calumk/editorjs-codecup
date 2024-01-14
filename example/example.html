@@ -61,6 +61,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
     -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
 
   
   <!-- Load Local Tools -->
@@ -101,6 +102,7 @@
 
         // Load Local Tools
           code: editorJsCodeCup,
+          // code: CodeTool,
 
         // Load 3rd Party Tools
           // n/a
@@ -128,6 +130,7 @@
     saveButton.addEventListener('click', function () {
       editor.save()
         .then((savedData) => {
+          console.log(savedData)
           cPreview.show(savedData, document.getElementById("output"));
         })
         .catch((error) => {

@@ -27,6 +27,14 @@ let example_data = {
 		{
 			type: "code",
 			data: {
+				code: "<script>console.log(1)</script>",
+				language: "javascript",
+				showlinenumbers: true,
+			},
+		},
+		{
+			type: "code",
+			data: {
 				code: "// example\n// This is an example of codecup! \n <script>TEST</script> \n <div> Hello World </div>",
 				language: "javascript",
 				showlinenumbers: true,
