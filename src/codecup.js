@@ -151,8 +151,8 @@
 
     this.data.editorInstance = new codecup(editorElem, { 
       language: this.data.language, 
-      lineNumbers : this.data.showlinenumbers
-      // readonly : this.readOnly
+      lineNumbers : this.data.showlinenumbers,
+      readonly : this.readOnly
     });
 
     // console.log(this.data.editorInstance)
