@@ -1,7 +1,7 @@
 {
   "name": "@calumk/editorjs-codecup",
   "description": "Codecup, for EditorJS",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Calum Knott",
   "repository": "https://github.com/calumk/editorjs-codecup",
   "license": "MIT",

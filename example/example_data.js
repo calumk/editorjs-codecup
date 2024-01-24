@@ -27,8 +27,8 @@ let example_data = {
 		{
 			type: "code",
 			data: {
-				code: "<script>console.log(1)</script>",
-				language: "javascript",
+				code: "\n<!-- this editor has the copy button disabled --> \n\n",
+				language: "html",
 				showlinenumbers: true,
 				showCopyButton: false,
 			},
