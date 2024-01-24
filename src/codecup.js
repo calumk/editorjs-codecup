@@ -21,26 +21,8 @@
   import style from './codecup.css'
   import icon from './codecup.svg';
 
-  // import Prism from 'prismjs';
-
-  // import "prismjs-components-importer/esm"; // ALL - Massivly Increases Bundle size!
-
-  // import "prismjs-components-importer/esm/prism-iecst"; // Structured Text
-  // import "prismjs-components-importer/esm/prism-markdown"; 
-  // import "prismjs-components-importer/esm/prism-json"; 
-  // import "prismjs-components-importer/esm/prism-python";
-  // import "prismjs-components-importer/esm/prism-bash";
- 
 
   import codecup from '@calumk/codecup/dist/codecup.bundle.js';
-
-  // import NiceSelect from "nice-select2/dist/js/nice-select2";
-  // import NiceSelectStyle from "nice-select2/dist/css/nice-select2.css";
-
-
-
-
-  // console.log(Prism.languages)
 
 
  
@@ -101,6 +83,7 @@
      this.data.code = (data.code === undefined) ? '// Hello World' : data.code;
      this.data.language = (data.language === undefined) ? 'plain' : data.language;
      this.data.showlinenumbers = (data.showlinenumbers === undefined) ? true : data.showlinenumbers;
+     this.data.showCopyButton = (data.showCopyButton === undefined) ? true : data.showCopyButton;
      this.data.editorInstance = {}
 
     //  console.log(this.data)
@@ -152,7 +135,8 @@
     this.data.editorInstance = new codecup(editorElem, { 
       language: this.data.language, 
       lineNumbers : this.data.showlinenumbers,
-      readonly : this.readOnly
+      readonly : this.readOnly,
+      copyButton : this.data.showCopyButton,
     });
 
     // console.log(this.data.editorInstance)
@@ -166,7 +150,7 @@
     });
     
 
-    this.data.editorInstance.addLanguage(this.data.language, Prism.languages[this.data.language]);
+    // this.data.editorInstance.addLanguage(this.data.language, Prism.languages[this.data.language]);
     this.data.editorInstance.updateCode(this.data.code);
 
     // console.log(this.data.code)
@@ -300,7 +284,8 @@
     let resp = {
       code : this.data.editorInstance.getCode(),
       language : this.data.language,
-      showlinenumbers : this.data.showlinenumbers
+      showlinenumbers : this.data.showlinenumbers,
+      showCopyButton : this.data.showCopyButton
     };
     
     return resp

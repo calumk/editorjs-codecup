@@ -1,7 +1,7 @@
 {
   "name": "@calumk/editorjs-codecup",
   "description": "Codecup, for EditorJS",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "author": "Calum Knott",
   "repository": "https://github.com/calumk/editorjs-codecup",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "@calumk/codecup": "^1.6.4"
+    "@calumk/codecup": "^1.8.1"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",

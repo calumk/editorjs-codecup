@@ -30,6 +30,7 @@ let example_data = {
 				code: "<script>console.log(1)</script>",
 				language: "javascript",
 				showlinenumbers: true,
+				showCopyButton: false,
 			},
 		},
 		{
@@ -38,6 +39,7 @@ let example_data = {
 				code: "// example\n// This is an example of codecup! \n <script>TEST</script> \n <div> Hello World </div>",
 				language: "javascript",
 				showlinenumbers: true,
+				showCopyButton: true,
 			},
 		},
 		{

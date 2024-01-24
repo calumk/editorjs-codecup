@@ -50,11 +50,13 @@ var editor = EditorJS({
 ## Data Format
 The data imported/exported from the block is as follows:
 
-| Name                       | Description                                                                                                              |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| code                       | The code that is displayed in the editor, with line breaks                                                               |
-| language (optional)        | The programming language                                                                                                 |
-| showlinenumbers (optional) | Will show/hide the line numbers (Default true) 
+| Name                       | Description                                                |
+| -------------------------- | ---------------------------------------------------------- |
+| code                       | The code that is displayed in the editor, with line breaks |
+| language (optional)        | The programming language                                   |
+| showlinenumbers (optional) | Will show/hide the line numbers (Default true)             |
+| showCopyButton (optional)  | will show/hide the copy button (Defauly true)              |
+|                            |                                                            |
 
 
 Since language and linenumbers are optional, existing ```code``` blocks can safley use this plugin
