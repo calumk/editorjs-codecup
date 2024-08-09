@@ -41,3 +41,34 @@
 	z-index: 10;
     position: inherit;
 } */
+
+
+.editorjs-codeCup_input{
+	background-color: #F8F8F8;
+	border-radius: 2px;
+	padding:5px;
+	flex: 1;
+	margin-right: 5px;
+}
+
+.editorjs-codeCup_input:focus{
+    outline: none;
+}
+
+.editorjs-codeCup_inputButton{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.editorjs-codeCup_inputButton:hover{
+	border-radius: 2px;
+	background-color: #dcdfe6;
+	cursor: pointer;
+}
+
+.editorjs-codeCup_inputContainer{
+	padding:5px;
+	display: flex;
+	justify-content: space-between;
+}

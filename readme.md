@@ -20,7 +20,7 @@ It was built to be an improvement on :
 
 ## Demo
 
-![Demo ](./example-media/editorjs-codeflask-demo.gif)
+![Demo ](./example-media/example2.gif)
 
 
 ## Built with:

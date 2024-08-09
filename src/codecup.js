@@ -215,41 +215,96 @@
 
     // Disabled until codeCup supports toggle of line numbers
     const toggleButton = document.createElement('div');
-    toggleButton.classList.add(this._CSS.settingsButton);
+    const toggleButtonInner = document.createElement('div');
+    toggleButton.classList.add('ce-popover-item');
+    toggleButtonInner.classList.add('ce-popover-item__title');
+
     if(this.data.showlinenumbers){
-      toggleButton.innerHTML = '<small>Hide Numbers</small>'
+      toggleButtonInner.innerHTML = 'Hide Numbers'
     }else{
-      toggleButton.innerHTML = '<small>Show Numbers</small>'
+      toggleButtonInner.innerHTML = 'Show Numbers'
     }
+
+    // append a html string directly to the element
+    let string = `<div class="ce-popover-item__icon ce-popover-item__icon--tool">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="48" y1="40" x2="208" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M154.91,157.6a40,40,0,0,1-53.82-59.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M135.53,88.71a40,40,0,0,1,32.3,35.53" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M208.61,169.1C230.41,149.58,240,128,240,128S208,56,128,56a126,126,0,0,0-20.68,1.68" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M74,68.6C33.23,89.24,16,128,16,128s32,72,112,72a118.05,118.05,0,0,0,54-12.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+    </div>`
+    toggleButton.innerHTML = string
+
+
+    toggleButton.appendChild(toggleButtonInner);
 
     toggleButton.addEventListener('click', (e) => {
       // console.log(e)
       e.target.classList.toggle(this._CSS.settingsButtonActive)
       this._toggleLineNumbers()
+      if(this.data.showlinenumbers){
+        toggleButtonInner.innerHTML = 'Hide Numbers'
+      }else{
+        toggleButtonInner.innerHTML = 'Show Numbers'
+      }
     });
 
 
 
     // settingsContainer.appendChild(languagesSelect);
     // new NiceSelect(languagesSelect, {searchable : true, placeholder : "Language..."});
+
+
     
     // create a button, when you click the button there should be a js prompt to enter a language. the default should be the current language.
-    let languageSelectButton = document.createElement("button");
-    languageSelectButton.classList.add(this.api.styles.button);
-    languageSelectButton.style.width = "100%";
-    languageSelectButton.textContent = this.data.language;
-    languageSelectButton.addEventListener('click', (event) => {
+    // let languageSelectButton = document.createElement("button");
+    // languageSelectButton.classList.add(this.api.styles.button);
+    // languageSelectButton.style.width = "100%";
+    // languageSelectButton.textContent = this.data.language;
+    // languageSelectButton.addEventListener('click', (event) => {
 
-      let lang = prompt("Please enter a language", this.data.language);
-      if (lang != null) {
+    //   let lang = prompt("Please enter a language", this.data.language);
+    //   if (lang != null) {
+    //     this._updateLanguage(lang)
+    //     // also update the button text
+    //     event.target.textContent = lang;
+    //   }
+    // });
+
+
+    const languageEntryInputContainer = document.createElement('div');
+    languageEntryInputContainer.classList.add('editorjs-codeCup_inputContainer');
+
+// <div contenteditable class="cdx-input" data-placeholder="Custom placeholder"></div>
+    let languageEntryInput = document.createElement("div")
+    languageEntryInput.classList.add("editorjs-codeCup_input")
+    languageEntryInput.setAttribute("contenteditable", "true")
+    languageEntryInput.setAttribute("data-placeholder", "Enter a language...")
+
+
+
+
+    let languageEntryInputButton = document.createElement("div")
+    let string2 = `<div class="ce-popover-item__icon ce-popover-item__icon--tool">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M136,136a8,8,0,0,1,8,8,16,16,0,0,1-16,16,24,24,0,0,1-24-24,32,32,0,0,1,32-32,40,40,0,0,1,40,40,48,48,0,0,1-48,48,56,56,0,0,1-56-56,64,64,0,0,1,64-64,72,72,0,0,1,72,72,80,80,0,0,1-80,80,88,88,0,0,1-88-88,96,96,0,0,1,96-96A104,104,0,0,1,240,144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+    </div>`
+    languageEntryInputButton.innerHTML = string2
+    languageEntryInputButton.classList.add("editorjs-codeCup_inputButton")
+    languageEntryInputButton.addEventListener('click', (event) => {
+      let lang = languageEntryInput.textContent
+      if(lang != ''){
         this._updateLanguage(lang)
-        // also update the button text
-        event.target.textContent = lang;
       }
     });
 
+    
+    languageEntryInputContainer.appendChild(languageEntryInput)
+    languageEntryInputContainer.appendChild(languageEntryInputButton)
+    // languageEntryInput.addEventListener('input', (event) => {
+    //   console.log(event)
+    //   // this._updateLanguage(event.target.value)
+
+    // });
+
     settingsContainer.appendChild(toggleButton);
-    settingsContainer.appendChild(languageSelectButton);
+    // settingsContainer.appendChild(languageSelectButton);
+    settingsContainer.appendChild(languageEntryInputContainer);
 
     return settingsContainer;
   }
@@ -262,7 +317,6 @@
     // console.log(this.data.editorInstance)
     // replace this with a native method for codeCup, if it gets implemented.
     // for now, we will completely destroy the codeCup instance, and rebuild it - lazy but effective
-
 
   }
 
