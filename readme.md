@@ -31,13 +31,13 @@ It was built to be an improvement on :
 
 ---
 
-## Installation / use
+## Installation / Use
 
 ```javascript
 import EditorJS from '@editorjs/editorjs';
 import editorjsCodecup from '@calumk/editorjs-codecup';
 
-var editor = EditorJS({
+var editor = new EditorJS({
   // ...
   tools: {
     ...
@@ -46,6 +46,40 @@ var editor = EditorJS({
 });
 ```
 
+### Language Selection
+
+This plugin includes a dropdown that enables users to choose a programming language for syntax highlighting with Prism.js.
+<br />Additionally, users can override the default language mapping by providing custom mappings of Prism.js language keys to their preferred display names in the configuration.
+<br />Refer to [Prism.js supported languages](https://prismjs.com/#supported-languages) for the available language mappings.
+
+
+#### Example Configuration
+
+```javascript
+import EditorJS from '@editorjs/editorjs';
+import editorjsCodecup from '@calumk/editorjs-codecup';
+
+var editor = new EditorJS({
+  // ...
+  tools: {
+    ...
+    code: {
+      class: editorJsCodeCup,
+      config: {
+        languages: { 
+          javascript: "JavaScript",
+          python: "Python",
+          java: "Java",
+          cpp: "C++",
+          csharp: "C#",
+          go: "Go",
+          none: "Plain Text",
+        } // override language selection
+      } 
+    }
+  },
+});
+```
 
 ## Data Format
 The data imported/exported from the block is as follows:
@@ -55,9 +89,7 @@ The data imported/exported from the block is as follows:
 | code                       | The code that is displayed in the editor, with line breaks |
 | language (optional)        | The programming language                                   |
 | showlinenumbers (optional) | Will show/hide the line numbers (Default true)             |
-| showCopyButton (optional)  | will show/hide the copy button (Defauly true)              |
-|                            |                                                            |
-
+| showCopyButton (optional)  | Will show/hide the copy button (Default true)              |
 
 Since language and linenumbers are optional, existing ```code``` blocks can safley use this plugin
 
