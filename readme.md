@@ -31,13 +31,13 @@ It was built to be an improvement on :
 
 ---
 
-## Installation / use
+## Installation / Use
 
 ```javascript
 import EditorJS from '@editorjs/editorjs';
 import editorjsCodecup from '@calumk/editorjs-codecup';
 
-var editor = EditorJS({
+var editor = new EditorJS({
   // ...
   tools: {
     ...
@@ -46,6 +46,64 @@ var editor = EditorJS({
 });
 ```
 
+### Language Selection
+
+The plugin provides two ways to handle language selection:
+
+1. **Free-form Language Input**: By default (when no languages are configured), users can enter any valid Prism.js language key through a text input.
+
+2. **Predefined Language Dropdown**: When you provide a languages configuration, users can select from a predefined list of languages through a dropdown menu.
+
+You can configure the language selection behavior using these options:
+
+#### Predefined Languages
+Provide a custom mapping of Prism.js language keys to their display names:
+
+```javascript
+var editor = new EditorJS({
+  // ...
+  tools: {
+    code: {
+      class: editorJsCodeCup,
+      config: {
+        languages: { 
+          javascript: "JavaScript",
+          python: "Python",
+          java: "Java",
+          cpp: "C++",
+          csharp: "C#",
+          go: "Go",
+          none: "Plain Text",
+        }
+      } 
+    }
+  },
+});
+```
+
+#### Force Show Language Input
+If you want to allow both predefined language selection AND free-form language input, use the `forceShowLanguageInput` option:
+
+```javascript
+var editor = new EditorJS({
+  // ...
+  tools: {
+    code: {
+      class: editorJsCodeCup,
+      config: {
+        languages: { 
+          javascript: "JavaScript",
+          python: "Python",
+          // ... other languages
+        },
+        forceShowLanguageInput: true // Shows both dropdown and language input
+      } 
+    }
+  },
+});
+```
+
+Refer to [Prism.js supported languages](https://prismjs.com/#supported-languages) for the available language mappings.
 
 ## Data Format
 The data imported/exported from the block is as follows:
@@ -55,30 +113,17 @@ The data imported/exported from the block is as follows:
 | code                       | The code that is displayed in the editor, with line breaks |
 | language (optional)        | The programming language                                   |
 | showlinenumbers (optional) | Will show/hide the line numbers (Default true)             |
-| showCopyButton (optional)  | will show/hide the copy button (Defauly true)              |
-|                            |                                                            |
-
+| showCopyButton (optional)  | Will show/hide the copy button (Default true)              |
 
 Since language and linenumbers are optional, existing ```code``` blocks can safley use this plugin
 
 
 
-<!-- ---
+---
 
-## Markdown Compatability
+## Contributing
 
-> TODO!
+@calumk
 
-This plugin *will be* compatible with
+@keertyverma
 
-    npm i editorjs-markdown-parser
-
-It will import/export using the code fence markdown style, with the language printed imediatly after the first fence, as described in [GFM #117](https://github.github.com/gfm/#example-112)
-
-Line-numbers cant be expressed in markdown, so will be ommited
-
-Example :
-
-    ```javascript
-    \\ Hello World
-    ``` -->

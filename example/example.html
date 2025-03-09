@@ -101,7 +101,25 @@
           // inlineCode:,
 
         // Load Local Tools
-          code: editorJsCodeCup,
+        code: {
+          class: editorJsCodeCup,
+          config: {
+            languages: { 
+                javascript: "JavaScript",
+                typescript: "TypeScript",
+                python: "Python",
+                java: "Java",
+              
+                csharp: "C#",
+                go: "Go",
+                rust: "Rust",
+                swift: "Swift",
+                none: "Plain Text",
+              }, 
+              
+              //forceShowLanguageInput: true
+          } 
+        }
           // code: CodeTool,
 
         // Load 3rd Party Tools
