@@ -1,6 +1,6 @@
 /**
-  * EditorJsCodeCup Block for the Editor.js.
-  *
-  * @author Calum Knott (calum@calumk.com)
-  * @license The MIT License (MIT)
-  */
+ * EditorJsCodeCup Block for the Editor.js.
+ *
+ * @author Calum Knott (calum@calumk.com)
+ * @license The MIT License (MIT)
+ */

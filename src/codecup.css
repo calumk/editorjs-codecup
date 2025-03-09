@@ -25,7 +25,7 @@
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
-	right: 12px; 
+	right: 0px; 
 	bottom: 0;
 	border-bottom-right-radius: 5px;
 	border-top-left-radius: 5px;
@@ -78,19 +78,19 @@
 }
 
 .editorjs-codeCup_languageDropdown {
-	position: absolute;
-	top: 100%;
-	left: 0;
+	/* top:10px; left:100px; */
+	position: fixed;
 	background: white;
 	border: 1px solid #ddd;
 	padding: 5px;
-	z-index: 1000;
+	z-index: 9999;
 	max-height: 200px;
 	overflow-y: auto;
 	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 	font-size: 14px;
 	min-width: 150px;
+	/* The position will need to be set dynamically via JavaScript */
 }
 
 .editorjs-codeCup_languageOption {
